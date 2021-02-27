@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The top 10 players </title>
+</head>
+<body>
+    <a href="Page04.html">Page 04</a>
+    <script>
+        function Player(rating, firstName, lastName, age, club) {
+            this.rating = rating;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.club = club;
+        };
+
+        let players = [];
+
+            let pleyer1 = new Player("#1","Lionel","Messi",33,"Barcelona")
+            let pleyer2 = new Player("#2","Cristiano","Ronaldo",35,"Barcelona")
+            let pleyer3 = new Player("#3","Robert","Lewandowski",33,"FC Bayern")
+            let pleyer4 = new Player("#4","Neymar","Jr",29,"Paris Saint-Germain")
+            let pleyer5 = new Player("#5","Jan","Oblak",28,"Atletico Madrid")
+            let pleyer6 = new Player("#6","Virgil","van Dijk",29,"Liverpool")
+            let pleyer7 = new Player("#7","Kylian","Mbappé",22,"Paris Saint-Germain")
+            let pleyer8 = new Player("#8","Mohamed","Salah",28,"Liverpool")
+            let pleyer9 = new Player("#9","Sadio","Mané",30,"Liverpool")
+            let pleyer10 = new Player("#10","Marc-Andre","ter Stegen",30,"Barcelona")
+
+            players.push(pleyer1);
+            players.push(pleyer2);
+            players.push(pleyer3);
+            players.push(pleyer4);
+            players.push(pleyer5);
+            players.push(pleyer6);
+            players.push(pleyer7);
+            players.push(pleyer8);
+            players.push(pleyer9);
+            players.push(pleyer10);
+
+            document.body.onload = function () {
+              
+                if (localStorage.Players === undefined) {
+                    localStorage.Players = JSON.stringify(players);
+                    alert("Data stored.");
+                }
+                else{
+                    alert("Data already exists!");
+                }
+                
+            };
+    </script>
+</body>
+</html>
