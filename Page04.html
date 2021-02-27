@@ -38,6 +38,10 @@
             <td>Red Star</td>
         </tr> -->
     </table>
+    <br>
+    <form action="">
+        <input type="button" value="Obrisi" onclick="Obrisi()">
+    </form>
     
     <script>
         document.body.onload = function () {
@@ -68,6 +72,11 @@
         }
             
         };
+        
+        function Obrisi() {
+            localStorage.clear();
+            location.reload();
+        }
     </script>
 </body>
 </html>
