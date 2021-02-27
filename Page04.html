@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFA 21 ratings</title>
+    <style>
+        table{
+            width: 200px;
+        }
+
+        table, td, th{
+            padding: 5px;
+            border:2px solid black;
+            border-collapse: collapse;
+        }
+
+        th{
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table id="table1">
+        <!-- <tr>
+            <th>Ranked</th>
+            <th>First Name</th>   // CUT
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Club</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Milan</td>
+            <td>Borjan</td>
+            <td>34</td>
+            <td>Red Star</td>
+        </tr> -->
+    </table>
+    
+    <script>
+        document.body.onload = function () {
+          
+            let htmlString = `<tr>
+            <th>Ranked</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Club</th>
+        </tr>`;
+
+        if (localStorage.Players !== undefined) {
+            let players = JSON.parse(localStorage.Players);
+
+            for (const i in players) {
+                htmlString += ` <tr>
+            <td>${players[i].rating}</td>
+            <td>${players[i].firstName}</td>
+            <td>${players[i].lastName}</td>
+            <td>${players[i].age}</td>
+            <td>${players[i].club}</td>
+        </tr>`;
+            }
+
+            let table = document.getElementById("table1");
+            table.innerHTML = htmlString;
+        }
+            
+        };
+    </script>
+</body>
+</html>
